@@ -84,8 +84,8 @@ class StoryList {
     })
 
     const story = new Story(response.data.story);
-    this.stories.unshift(story); ///is this just adding to the array? 
-    user.ownStories.unshift(story); ///how is user accessed?
+    this.stories.unshift(story); ///how do we know stories in the constructor is an array? 
+    user.ownStories.unshift(story); 
 
     return story; 
   }
