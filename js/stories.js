@@ -92,7 +92,7 @@ async function submitNewStory(evt) {
   const url = $('#create-url').val();
   const username = currentUser.username;
 
-  const story = await storyList.addStory(currentUser, {author, title, url, username}); /// why do we need username in the data? API doc for new story is just author, title, and url.
+  const story = await storyList.addStory(currentUser, {author, title, url}); 
 
   const $story = generateStoryMarkup(story);
   $allStoriesList.append($story);
