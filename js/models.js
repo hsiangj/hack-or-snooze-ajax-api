@@ -84,7 +84,7 @@ class StoryList {
     })
 
     const story = new Story(response.data.story);
-    this.stories.unshift(story); ///how do we know stories in the constructor is an array? 
+    this.stories.unshift(story);  
     user.ownStories.unshift(story); 
 
     return story; 
@@ -95,7 +95,7 @@ class StoryList {
     await axios({
       method: "DELETE",
       url: `${BASE_URL}/stories/${storyId}`,
-      data: {token} ///why does solution have {token: user.loginToken}
+      data: {token} 
     })
     this.stories = this.stories.filter(story => story.storyId !== storyId);
 
@@ -226,7 +226,7 @@ class User {
   }
 
   async removeFavorite(story){
-    this.favorites = this.favorites.filter(s=>s.storyId !== story.storyId); ///what does the filter condition achieve? How is the story ID different in favorites vs story class? 
+    this.favorites = this.favorites.filter(s=>s.storyId !== story.storyId);  
     await this.addOrRemoveFavorite('remove',story);
   }
 
@@ -241,7 +241,7 @@ class User {
   }
 
   isFavorite(story) {
-    return this.favorites.some(s => (s.storyId === story.storyId)); ///why use some()?
+    return this.favorites.some(s => (s.storyId === story.storyId)); 
   }
  
 
