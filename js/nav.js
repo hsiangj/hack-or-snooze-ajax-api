@@ -38,7 +38,6 @@ function navMyStories(evt){
   console.debug("navMyStories", evt);
   hidePageComponents();
   putUserStoriesOnPage();
-  $myStories.show(); ///why is this line needed?
 }
 
 $body.on("click", "#nav-my-stories", navMyStories);
